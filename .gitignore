@@ -1,0 +1,27 @@
+
+
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.db
+*.csv
+*.log
+
+# ignore test data 
+output/
+tests/
+
+.gradio/
+
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints
+# Ignore Python virtual environments
+.venv/
+
+# NO KEYS FFS
+env
+.env
+.venv
+# Ignore Python bytecode files
+*.py[cod]
