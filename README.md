@@ -1,4 +1,4 @@
-# 🏢 HumanFirst Demos - Synthetic Data Generation
+# 🏢 Generate Migration Test Data - Synthetic Data Generation
 
 <div align="center">
 
@@ -44,7 +44,7 @@ Perfect for testing, demonstrations, training, and development environments wher
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd humanfirst-demos
+cd generate-migtestdata
 
 # Install dependencies
 make install
@@ -74,7 +74,7 @@ make test-coverage
 ## 📁 Project Structure
 
 ```
-humanfirst-demos/
+generate-migtestdata/
 ├── 📄 create-testdata.py          # Server migration data generator
 ├── 👥 generate-payroll-data.py    # Payroll data generator  
 ├── 📋 requirements.txt            # Python dependencies

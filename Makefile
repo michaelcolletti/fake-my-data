@@ -1,4 +1,4 @@
-# Makefile for HumanFirst Demos - Synthetic Data Generation
+# Makefile for Generate Migration Test Data - Synthetic Data Generation
 # ========================================================
 
 # Python interpreter
@@ -13,7 +13,7 @@ OUTPUT_DIR := output
 # Default target
 .PHONY: help
 help: ## Show this help message
-	@echo "🚀 HumanFirst Demos - Synthetic Data Generation"
+	@echo "🚀 Generate Migration Test Data - Synthetic Data Generation"
 	@echo "================================================"
 	@echo ""
 	@echo "Available targets:"
@@ -191,7 +191,7 @@ clean-cache: ## Clean Python cache files only
 info: ## Show project information
 	@echo "📋 Project Information"
 	@echo "====================="
-	@echo "Project: HumanFirst Demos - Synthetic Data Generation"
+	@echo "Project: Generate Migration Test Data - Synthetic Data Generation"
 	@echo "Python: $(shell $(PYTHON) --version)"
 	@echo "Pip: $(shell $(PIP) --version)"
 	@echo ""
