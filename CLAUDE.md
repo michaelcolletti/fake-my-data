@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This repository contains Python scripts for generating synthetic test data, specifically focused on:
+The fake-my-data repository contains Python scripts for generating synthetic test data, specifically focused on:
 - **Server migration data**: Complete server infrastructure records for cloud migration scenarios
 - **Payroll data**: Employee records with department, salary, and employment details
 

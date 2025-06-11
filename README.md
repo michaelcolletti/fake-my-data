@@ -1,4 +1,4 @@
-# 🏢 Generate Migration Test Data - Synthetic Data Generation
+# 🎲 Fake My Data - Synthetic Data Generation
 
 <div align="center">
 
@@ -44,7 +44,7 @@ Perfect for testing, demonstrations, training, and development environments wher
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd generate-migtestdata
+cd fake-my-data
 
 # Install dependencies
 make install
@@ -74,7 +74,7 @@ make test-coverage
 ## 📁 Project Structure
 
 ```
-generate-migtestdata/
+fake-my-data/
 ├── 📄 create-testdata.py          # Server migration data generator
 ├── 👥 generate-payroll-data.py    # Payroll data generator  
 ├── 📋 requirements.txt            # Python dependencies
@@ -300,7 +300,7 @@ For questions, issues, or feature requests:
 
 <div align="center">
 
-**[⭐ Star this repository](https://github.com/your-repo) if you find it helpful!**
+**[⭐ Star this repository](https://github.com/michaelcolletti/fake-my-data) if you find it helpful!**
 
 *Built with ❤️ for the data generation community*
 
