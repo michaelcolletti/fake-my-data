@@ -1,5 +1,8 @@
 
 
+# Claude 
+.claude-files
+
 __pycache__/
 *.pyc
 *.pyo
@@ -8,9 +11,9 @@ __pycache__/
 *.csv
 *.log
 
-# ignore test data 
+#tests/
+
 output/
-tests/
 
 .gradio/
 
