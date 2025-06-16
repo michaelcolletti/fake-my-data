@@ -2,6 +2,8 @@
 
 # Claude 
 .claude-files
+# for local json
+.claude
 
 __pycache__/
 *.pyc
@@ -14,6 +16,10 @@ __pycache__/
 #tests/
 
 output/
+
+.coverage
+.pytest_cache
+htmlcov/
 
 .gradio/
 
