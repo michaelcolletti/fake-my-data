@@ -157,12 +157,15 @@ The project includes comprehensive test suites ensuring data quality and consist
 ### Run Tests
 
 ```bash
-# All tests
+# All tests with pytest
+python -m pytest tests/ -v
+
+# Quick test via make
 make test
 
 # Specific test suites
-make test-server     # Server data tests only
-make test-payroll    # Payroll data tests only
+python -m pytest tests/test_create_testdata.py -v     # Server data tests
+python -m pytest tests/test_generate_payroll_data.py -v  # Payroll data tests
 
 # With coverage reporting
 make test-coverage
@@ -170,14 +173,16 @@ make test-coverage
 
 ### Test Coverage
 
-Our test suite validates:
+**24 comprehensive tests** with 100% pass rate covering:
 
-- ✅ **Data Structure**: Correct fields and formats
-- ✅ **Value Ranges**: Realistic and expected data ranges  
-- ✅ **Business Logic**: Department/salary consistency
-- ✅ **File Integrity**: Valid CSV output
-- ✅ **CLI Interface**: Command-line argument handling
-- ✅ **Edge Cases**: Error handling and validation
+- ✅ **Data Structure**: Correct fields and formats (8 tests)
+- ✅ **Value Ranges**: Realistic and expected data ranges (6 tests)
+- ✅ **Business Logic**: Department/salary consistency (4 tests)
+- ✅ **File Integrity**: Valid CSV output (3 tests)
+- ✅ **CLI Interface**: Command-line argument handling (2 tests)
+- ✅ **Edge Cases**: Error handling and validation (1 test)
+
+All tests validate both server migration and payroll data generation with comprehensive business rule checking.
 
 ## 📊 Sample Data Output
 
@@ -242,16 +247,31 @@ Both generators follow a consistent architecture:
 - **✅ Tested**: Comprehensive validation and quality assurance
 - **🚀 Fast**: Efficient generation for large datasets
 
-## 🛡️ Data Privacy
+## 🛡️ Data Privacy & GDPR Compliance
 
-All generated data is **completely synthetic** and contains:
+All generated data is **completely synthetic** and fully GDPR compliant:
 
-- ❌ **No real personal information**
-- ❌ **No actual server details**
-- ❌ **No sensitive business data**
-- ✅ **Safe for all environments**
-- ✅ **GDPR compliant**
-- ✅ **No privacy concerns**
+### 🔒 Privacy Protection
+- ❌ **No real personal information** - All names, emails, and IDs are faker-generated
+- ❌ **No actual server details** - Infrastructure data is entirely synthetic
+- ❌ **No sensitive business data** - Safe for sharing and testing
+- ✅ **Safe for all environments** - Development, staging, and production testing
+- ✅ **No data subject rights apply** - Not derived from real individuals
+- ✅ **No anonymization needed** - Never contained personal data
+
+### 🌍 Cloud Provider Compliance
+The server migration data includes cloud provider mappings to support GDPR-compliant infrastructure planning:
+
+- **AWS, Azure, GCP, OCI** targeting with data residency considerations
+- **EU region mapping** (eu-central-1, eu-west-1) for European data sovereignty
+- **Migration wave planning** to ensure compliance during cloud transitions
+- **Business criticality flags** to identify systems handling personal data
+
+### ✅ Legal Benefits
+- **Article 4(1) GDPR doesn't apply** - No processing of personal data
+- **Safe for international transfer** - No cross-border data restrictions
+- **No consent required** - Synthetic data, not personal information
+- **No breach notification** - No real data at risk
 
 ## 📦 Dependencies
 

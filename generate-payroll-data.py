@@ -28,9 +28,7 @@ def generate_fake_payroll(filename):
 
         # Determine position title and actual_base_salary
         dept_roles_salaries = dept_salary_map[dept]
-        position_name = "Staff"  # Default position name
-        actual_base_salary = 3000  # Default base salary for the role
-
+        
         if is_manager:
             if dept == "Finance" and "Director" in dept_roles_salaries:
                 position_name = "Director"
@@ -38,6 +36,10 @@ def generate_fake_payroll(filename):
             elif "Manager" in dept_roles_salaries:
                 position_name = "Manager"
                 actual_base_salary = dept_roles_salaries["Manager"]
+            else:
+                # Fallback for manager role
+                position_name = "Manager"
+                actual_base_salary = 5000
         else:
             # Get non-manager options
             non_manager_options = {
@@ -48,10 +50,10 @@ def generate_fake_payroll(filename):
             if non_manager_options:
                 position_name = random.choice(list(non_manager_options.keys()))
                 actual_base_salary = non_manager_options[position_name]
-            else:  # Fallback if only manager/director roles defined
-                if dept_roles_salaries:
-                    position_name = random.choice(list(dept_roles_salaries.keys()))
-                    actual_base_salary = dept_roles_salaries[position_name]
+            else:
+                # Fallback for non-manager role
+                position_name = "Staff"
+                actual_base_salary = 3500
 
         # Generate hours worked per week (35-45 hours)
         hours_per_week = random.randint(35, 45)

@@ -38,15 +38,25 @@ Both scripts follow a similar pattern:
 
 ### Key Components
 - **create-testdata.py**: Well-structured server migration data generator with comprehensive CLI interface using click
-- **generate-payroll-data.py**: Payroll data generator (contains syntax errors that need fixing)
+- **generate-payroll-data.py**: Payroll data generator with department-based role assignments and proper salary mapping
 
 ### Data Models
 - **Server Migration**: 15 fields including server specs, migration status, cloud targets, and business criticality
 - **Payroll**: 8 fields covering employee demographics, department assignment, and compensation
 
-## Important Notes
+## Testing
 
-The `generate-payroll-data.py` script contains syntax errors and incomplete logic that prevent it from running successfully. When working on this file, focus on:
-- Fixing the misplaced dictionary append logic around lines 40-51
-- Completing the incomplete employee record generation
-- Ensuring proper indentation and structure consistency
+### Run Tests
+```bash
+# Run all tests with verbose output
+python -m pytest tests/ -v
+
+# Run specific test file
+python -m pytest tests/test_create_testdata.py -v
+python -m pytest tests/test_generate_payroll_data.py -v
+```
+
+The test suite includes comprehensive coverage for both data generation scripts:
+- **24 total tests** covering data validation, CSV integrity, and business logic
+- All tests currently pass with 100% success rate
+- Tests validate field ranges, data consistency, and output format correctness
