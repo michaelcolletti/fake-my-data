@@ -318,6 +318,70 @@ For questions, issues, or feature requests:
 
 ---
 
+## 🐳 Docker Support (Optional)
+
+<details>
+<summary>🚀 <strong>Click to expand containerized deployment options</strong></summary>
+
+For containerized deployment and isolated environments, Docker support is available with enterprise-grade security hardening:
+
+### 🏃‍♂️ Quick Start with Docker
+
+```bash
+# 🔧 Build and run interactively
+docker-compose up fake-my-data
+
+# 🖥️ Generate server migration data
+docker-compose up server-data
+
+# 👥 Generate payroll data
+docker-compose up payroll-data
+
+# 🐙 Works with Podman too
+podman-compose up fake-my-data
+```
+
+### 🛡️ Security & Performance Features
+
+<details>
+<summary>🔒 <strong>Security Hardening Details</strong></summary>
+
+- 🏗️ **Multi-stage builds** for minimal attack surface and image size
+- 👤 **Non-root user execution** (appuser:appuser) for privilege separation
+- 📂 **Read-only root filesystem** with dedicated writable output volumes
+- 🔐 **No new privileges** security option enabled
+- 🚫 **Temporary filesystem restrictions** (noexec, nosuid)
+- 🌐 **Network isolation** with custom bridge networks
+- 🏷️ **SELinux/AppArmor compatible** volume mounts with :Z flags
+
+</details>
+
+<details>
+<summary>⚡ <strong>Resource Management</strong></summary>
+
+- 💾 **Memory limit**: 512MB per container
+- 🔄 **CPU limit**: 1.0 core per container  
+- 📊 **Monitoring ready** with resource constraints
+- 🔄 **Tmpfs optimization** for temporary files (100MB)
+
+</details>
+
+### 📁 Output Management
+
+Generated files will be automatically available in your local `./output/` directory with proper permissions maintained across Docker/Podman environments.
+
+### 🐙 Podman Compatibility
+
+Fully compatible with Podman for rootless container execution:
+```bash
+# 🔐 Rootless execution with Podman
+podman-compose up --build fake-my-data
+```
+
+</details>
+
+---
+
 <div align="center">
 
 **[⭐ Star this repository](https://github.com/michaelcolletti/fake-my-data) if you find it helpful!**

@@ -1,0 +1,52 @@
+version: '3.8'
+
+services:
+  fake-my-data:
+    build: .
+    container_name: fake-my-data
+    volumes:
+      # Mount output directory for generated files
+      - ./output:/app/output:Z
+      # Mount source for development (optional, comment out for production)
+      - .:/app:Z
+    environment:
+      - PYTHONUNBUFFERED=1
+    # Override default command for interactive use
+    command: /bin/bash
+    stdin_open: true
+    tty: true
+    # Security options
+    security_opt:
+      - no-new-privileges:true
+    # Read-only root filesystem (output dir is writable via volume)
+    read_only: true
+    tmpfs:
+      - /tmp:noexec,nosuid,size=100m
+    # Resource limits
+    deploy:
+      resources:
+        limits:
+          memory: 512M
+          cpus: '1.0'
+    # Network isolation
+    networks:
+      - fake-data-net
+
+  # Service for running specific data generation tasks
+  server-data:
+    extends: fake-my-data
+    container_name: fake-server-data
+    command: python create-testdata.py --num-rows 100 --output-file /app/output/server_data.csv
+    stdin_open: false
+    tty: false
+
+  payroll-data:
+    extends: fake-my-data
+    container_name: fake-payroll-data
+    command: python generate-payroll-data.py
+    stdin_open: false
+    tty: false
+
+networks:
+  fake-data-net:
+    driver: bridge
